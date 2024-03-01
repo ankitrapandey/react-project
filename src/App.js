@@ -1,25 +1,28 @@
-import logo from './logo.svg';
+import { createContext } from 'react';
 import './App.css';
-import Home from './Home';
-import Ankit from './Ankit';
-import Toggle from './Toggle';
-import Counter from './Counter';
-import { User } from './User';
-import { Effect } from './Effect';
-import { Data } from './Data';
-import Userdata from './Userdata';
+import Child3 from './Child3'
 
+// import Child1 from "./Child1";
+
+const data=createContext()
 const App = () => {
+  const a=[
+    {
+      name:"ankit",
+      age:"20",
+      place:"rewa"
+    }
+  ]
+
   return (
     <>
-      {/* <Toggle/> */}
-      {/* { <Counter/> } */}
-      {/* <User/> */}
-      {/* <Effect/>  */}
-      {/* <Data/> */}
-     {/* <Ankit/> */}
-     <Userdata/>
+      <data.Provider value={a}>
+        <Child3 />
+      </data.Provider>
+     
     </>
   );
 }
 export default App;
+export { data }
+
